@@ -16,11 +16,11 @@ module.exports = (knex) => {
         const resource_ids = [];
         for (let cat of categories_resources){
           resource_ids.push(cat.resource_id);
-        }
+        }        
         knex
           .select("*")
           .from("resources")
-          .whereIn("id", resource_ids)
+          .whereIn("resource_id", resource_ids)
           .then((resources) => {
             knex.select("*")
               .from("categories")

@@ -31,7 +31,7 @@ module.exports = (knex) => {
     knex
       .select("*")
       .from("resources")
-      .where("id", resource_id )
+      .where("resource_id", resource_id )
       .then((resources) => {
         knex
           .select("*")
@@ -84,7 +84,7 @@ module.exports = (knex) => {
           knex
             .select("url")
             .from("resources")
-            .where("id", resource_id )
+            .where("resource_id", resource_id )
             .then((results3) => {
               const url = results3[0];
               res.render('tagCategory',{
@@ -102,7 +102,7 @@ module.exports = (knex) => {
       function (error, response, body) {
         const jsonResp = JSON.parse(body);
         knex("resources")
-          .returning("id")
+          .returning("resource_id")
           .insert({
             url: jsonResp.url,
             title: jsonResp.title,
