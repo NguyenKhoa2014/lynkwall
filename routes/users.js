@@ -16,7 +16,7 @@ module.exports = (knex) => {
   });
 
   // Get all resources created by a user
-  router.get("/:userid/resources", (req, res) => {
+  router.get("/:userid/resources", (req, res) => {    
     const userid = req.params.userid;
     const userLikes = [];
     knex
@@ -31,7 +31,7 @@ module.exports = (knex) => {
           .select("*")
           .from("resources")
           .where("creator_id", userid)
-          .orWhereIn("id", userLikes)
+          .orWhereIn("resource_id", userLikes)
           .then((resources) => {
             knex
               .select("*")

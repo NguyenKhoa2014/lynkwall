@@ -16,7 +16,7 @@ $(document).ready(function() {
   $.get('/api/v1/categories/', resIds, function(categories){
     for (let cat of categories){
       $('#categoriesMenu').append(
-        `<li><a href="/categories/${cat.id}/resources">${cat.category}</a></li>`
+        `<li><a href="/categories/${cat.category_id}/resources">${cat.category}</a></li>`
       );
     }
   });

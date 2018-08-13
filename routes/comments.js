@@ -24,7 +24,7 @@ module.exports = (knex) => {
     knex
       .select("*")
       .from("resources")
-      .where("id", resourceId)
+      .where("resource_id", resourceId)
       .then((results) => {
         knex
         .select("*")

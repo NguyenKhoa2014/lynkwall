@@ -12,7 +12,7 @@
         <% for (let res of resources){ %>
           <% include partials/_tagCategory.ejs %>
 
-        <div class="resource-card card cell small-12 medium-6 large-3" data-resource_id="<%=res.id%>">
+        <div class="resource-card card cell small-12 medium-6 large-3" data-resource_id="<%=res.resource_id%>">
           <div class="grid-y" style="height:32em;" >
             <div class="cell 2 card-divider" data-equalizer-watch>
              <h5 class="subheader">
@@ -55,7 +55,7 @@
                   </label>
                 </div>
                 <div>
-                  <a data-res_id="<%=res.id%>" class="like-button">
+                  <a data-res_id="<%=res.resource_id%>" class="like-button">
                     <i class="far fa-thumbs-up"></i>
                   </a>
                   <a class="tag-button" >
@@ -64,10 +64,10 @@
                 </div>
               </div>
               <p class="text-center">
-                <a href="/resources/<%=res.id%>/comments" style="" >View Comments</a>
+                <a href="/resources/<%=res.resource_id%>/comments" style="" >View Comments</a>
               </p>
               <div class="hiddenDiv" style="background-color:white;" hidden>
-                <form method="POST" action="/resources/<%=res.id%>/categories">
+                <form method="POST" action="/resources/<%=res.resource_id%>/categories">
                   <div class="grid-container grid-container-padded">
                     <div class="grid-y grid-padding-y">
                       <div class="medium-6 cell">

@@ -5,6 +5,7 @@ const router = express.Router();
 
 module.exports = (knex) => {
 
+  // Get all users
   router.get("/", (req, res) => {
     knex
       .select("*")
